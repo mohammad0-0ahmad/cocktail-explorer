@@ -1,0 +1,8 @@
+#NavBar {
+  text-align: center;
+}
+#NavBar > a {
+  text-decoration: none;
+  margin: 0 0.6vw;
+  font-weight: 500;
+}
