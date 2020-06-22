@@ -1,0 +1,12 @@
+#HomePage {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  flex-flow: column;
+}
+#HomePage > h1 {
+  color: #74d870;
+  text-align: center;
+  font-size: 5vw;
+}
