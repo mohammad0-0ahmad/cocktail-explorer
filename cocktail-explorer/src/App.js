@@ -1,6 +1,6 @@
 import React from "react";
 import "./App.css";
-import { BrowserRouter, Switch, Route } from "react-router-dom";
+import { BrowserRouter, Switch, Route, Redirect } from "react-router-dom";
 import NavBar from "./components/NavBar";
 import HomePage from "./components/HomePage";
 import ExplorePage from "./components/ExplorePage";
@@ -14,6 +14,7 @@ function App() {
         <Route path="/" exact={true} component={HomePage} />
         <Route path="/explore" exact={true} component={ExplorePage} />
         <Route path="/explore/:name" exact={true} component={DrinkPage} />
+        <Redirect to='/' />
       </Switch>
     </BrowserRouter>
   );
