@@ -1,39 +1,44 @@
 #ExplorePage {
-  width: 100vw;
   display: flex;
   align-items: center;
   flex-flow: column;
-  padding: 0 3vw;
 }
 #ExplorePage > * {
-  margin-top: 3vw;
+  padding: 1.5vw 0;
 }
 #ExplorePage > h1 {
   color: #40e0d0;
   text-align: center;
   font-size: 5vw;
 }
+#ExplorePage > h2 {
+  color: #e04040;
+  text-align: center;
+  font-size: 1.5vw;
+}
 #search-bar > input {
   padding: 0.5vw;
   border-radius: 0.3vw;
   font-size: 1vw;
   margin-left: 0.5vw;
-  outline: none;
-  border-width: 0.15vw;
+  border-width: 0.1vw;
 }
 #search-bar > button {
   background-color: #efefef;
-  border-width: 0.15vw;
+  border-width: 0.1vw;
   cursor: pointer;
   padding: 0.5vw;
   border-radius: 0.3vw;
   font-size: 1vw;
   margin-left: 0.5vw;
-  outline: none;
+}
+#search-bar > button:focus {
+  border: .1vw solid #1d6cc6;
 }
 #search-result {
+  width: 100%;
   display: grid;
-  grid-template-columns: 25% 25% 25% 25%;
+  grid-template-columns: auto auto auto auto;
   column-gap: 1vw;
   row-gap: 1vw;
 }

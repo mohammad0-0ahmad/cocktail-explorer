@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import '../styling/ExplorePage.css'
 import data from '../data/drinks.json'
 import Drink from './Drink';
@@ -8,11 +8,23 @@ const DRINKS = data.cocktails;
 const ExplorePage = () => {
     const [serachText, setSearchText] = useState('');
     const [shownDrinks, setShownDrinks] = useState('');
+    const [isResult, setIsResult] = useState(true);
 
     const handleSearch = () => {
-        let result = DRINKS.filter((drink) => drink.name.toLowerCase().includes(serachText.toLowerCase()))
-        setShownDrinks(result.map((drink) => <Drink name={drink.name} img={drink.image} />))
+        if (serachText) {
+            let result = DRINKS.filter((drink) => drink.name.toLowerCase().includes(serachText.trim().toLowerCase()));
+            if (result.length) {
+                setShownDrinks(result.map((drink, i) => <Drink key={i} name={drink.name} img={drink.image} />));
+                setIsResult(true);
+            } else {
+                setShownDrinks('');
+                setIsResult(false);
+            }
+        }
     }
+    useEffect(() => {
+        setIsResult(true);
+    }, [serachText])
     return (
         <div id='ExplorePage'>
             <h1>
@@ -24,9 +36,16 @@ const ExplorePage = () => {
                     Search
                 </button>
             </div>
-            <div id='search-result'>
-                {shownDrinks}
-            </div>
+            {isResult &&
+                <div id='search-result'>
+                    {shownDrinks}
+                </div>
+            }
+            {!isResult &&
+                <h2>
+                    Could not find a related drink try again :)
+                </h2>
+            }
         </div>
     )
 }

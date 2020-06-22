@@ -1,0 +1,15 @@
+#DrinkPage {
+  text-align: center;
+}
+#DrinkPage > * {
+  padding: 1.5vw 0;
+}
+#DrinkPage h3 {
+  font-size: 1.6vw;
+}
+#DrinkPage p {
+  font-size: 1vw;
+}
+#DrinkPage img {
+  width: 30vw;
+}
