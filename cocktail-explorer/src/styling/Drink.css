@@ -1,0 +1,8 @@
+.Drink > h2{
+    text-align: center;
+    font-size: 1vw;
+    font-weight: 500;
+}
+.Drink > img{
+    width: 100%;
+}
