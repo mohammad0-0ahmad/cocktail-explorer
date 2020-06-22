@@ -20,6 +20,8 @@ const ExplorePage = () => {
                 setShownDrinks('');
                 setIsResult(false);
             }
+        } else {
+            setShownDrinks('');
         }
     }
     useEffect(() => {

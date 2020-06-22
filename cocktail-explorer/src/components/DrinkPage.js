@@ -6,7 +6,7 @@ import '../styling/DrinkPage.css'
 const DRINKS = data.cocktails;
 
 const DrinkPage = ({ history }) => {
-    const name = useParams('name').name;
+    const { name } = useParams();
     const [drink, setDrink] = useState();
 
     useEffect(() => {
